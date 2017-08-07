@@ -64,24 +64,9 @@ public class VRPawn : NetworkBehaviour {
 			FollowObject (Head, CameraRigHead);
 			FollowObject (LeftController, CameraRigLeft);
 			FollowObject (RightController, CameraRigRight);
-
-			CmdCameraRigChange (CameraRigHead, CameraRigLeft, CameraRigRight);
-
 		}
 
 
 	}
-
-	[Command]
-	public void CmdCameraRigChange(Transform head, Transform left, Transform right) {
-		RpcCameraRigChange(head, left, right);
-	}
-
-	[ClientRpc]
-	void RpcCameraRigChange(Transform head, Transform left, Transform right) {
-		FollowObject (Head, head);
-		FollowObject (LeftController, left);
-		FollowObject (RightController, right);	
-	}
-
+		
 }
