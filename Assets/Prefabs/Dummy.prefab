@@ -1108,6 +1108,8 @@ GameObject:
   - component: {fileID: 114390703251379504}
   - component: {fileID: 114656911247207410}
   - component: {fileID: 114354638511379100}
+  - component: {fileID: 114345044353971614}
+  - component: {fileID: 114377148287542026}
   m_Layer: 0
   m_Name: Dummy
   m_TagString: Untagged
@@ -2833,6 +2835,25 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114345044353971614
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1727149980524966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1267208747, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Target: {fileID: 4903565449090066}
+  m_ChildIndex: 3
+  m_SendInterval: 0.05
+  m_SyncRotationAxis: 7
+  m_RotationSyncCompression: 0
+  m_MovementThreshold: 0.001
+  m_InterpolateRotation: 0.5
+  m_InterpolateMovement: 0.5
 --- !u!114 &114354638511379100
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2850,6 +2871,25 @@ MonoBehaviour:
   FinalIKHead: {fileID: 4400159769085288}
   FinalIKLeft: {fileID: 4903565449090066}
   FinalIKRight: {fileID: 4573992415130810}
+--- !u!114 &114377148287542026
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1727149980524966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1267208747, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Target: {fileID: 4573992415130810}
+  m_ChildIndex: 4
+  m_SendInterval: 0.05
+  m_SyncRotationAxis: 7
+  m_RotationSyncCompression: 0
+  m_MovementThreshold: 0.001
+  m_InterpolateRotation: 0.5
+  m_InterpolateMovement: 0.5
 --- !u!114 &114390703251379504
 MonoBehaviour:
   m_ObjectHideFlags: 1
