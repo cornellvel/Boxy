@@ -1,8 +1,6 @@
-# Multiuser Vive
+# Boxy
 
-Basic Unity project setup for multiplayer with HTC Vive. (Includes part of SteamVR v1.2.1)
-
-Updated for Unity 5.6.1p3.
+Basic Unity project setup for multiplayer with HTC Vive.
 
 Seperate scenes for Local network or Internet version.
 
@@ -10,6 +8,10 @@ Seperate scenes for Local network or Internet version.
 Both PCs need to be on same subnet to find each other.
 
 Make sure "Run as server" on LocalNetworkManager is only checked on one of the PCs.
+
+If you're running as server, do not fill in the ServerIP on LocalNetworkManager
+
+If you're running as a client, fill in the ServerIP of the computer running as server
 
 ## Internet version
 Replace the project id with one of your own and enable multiplayer.
