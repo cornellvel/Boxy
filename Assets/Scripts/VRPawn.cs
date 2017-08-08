@@ -31,6 +31,11 @@ public class VRPawn : NetworkBehaviour {
 			CameraRigLeft = CameraRig.transform.GetChild (1);
 			CameraRigRight = CameraRig.transform.GetChild (0);
 
+			CameraRigHead.hasChanged = false;
+			CameraRigLeft.hasChanged = false;
+			CameraRigRight.hasChanged = false;
+
+
 			if (FinalIKHead && FinalIKLeft && FinalIKRight) {
 
 				FinalIKHead.localPosition = new Vector3(0, 0, -.08f);
