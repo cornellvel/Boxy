@@ -2850,8 +2850,8 @@ MonoBehaviour:
   m_SyncRotationAxis: 7
   m_RotationSyncCompression: 0
   m_MovementThreshold: 0.001
-  m_InterpolateRotation: 0.5
-  m_InterpolateMovement: 0.5
+  m_InterpolateRotation: 0.8
+  m_InterpolateMovement: 0.8
 --- !u!114 &114317914361015022
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2869,8 +2869,8 @@ MonoBehaviour:
   m_SyncRotationAxis: 7
   m_RotationSyncCompression: 0
   m_MovementThreshold: 0.001
-  m_InterpolateRotation: 0.5
-  m_InterpolateMovement: 0.5
+  m_InterpolateRotation: 0.8
+  m_InterpolateMovement: 0.8
 --- !u!114 &114354638511379100
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2905,8 +2905,8 @@ MonoBehaviour:
   m_SyncRotationAxis: 7
   m_RotationSyncCompression: 0
   m_MovementThreshold: 0.001
-  m_InterpolateRotation: 0.5
-  m_InterpolateMovement: 0.5
+  m_InterpolateRotation: 0.8
+  m_InterpolateMovement: 0.8
 --- !u!114 &114647916313388728
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3038,7 +3038,7 @@ MonoBehaviour:
       bendGoalWeight: 0
       swivelOffset: 10
     locomotion:
-      weight: 0.667
+      weight: 0
       footDistance: 0.2
       stepThreshold: 0.4
       angleThreshold: 60
@@ -3135,8 +3135,8 @@ MonoBehaviour:
   m_MovementTheshold: 0.001
   m_VelocityThreshold: 0.0001
   m_SnapThreshold: 5
-  m_InterpolateRotation: 1
-  m_InterpolateMovement: 1
+  m_InterpolateRotation: 0
+  m_InterpolateMovement: 0
 --- !u!137 &137000146862357052
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
