@@ -20,7 +20,7 @@ public class CubeSizeController : NetworkBehaviour {
 
 		currentFrame++;
 
-		if (!(currentFrame > UpdateThreshold)) return;
+		if (currentFrame < UpdateThreshold) return;
 
 		// Get index of right and left most controllers
 		int rightIndex = SteamVR_Controller.GetDeviceIndex(SteamVR_Controller.DeviceRelation.Rightmost);
@@ -44,7 +44,6 @@ public class CubeSizeController : NetworkBehaviour {
 
 	}
 
-	// Major WTF right here lol look at the networking docs
 	// for some reason unity doesn't support transforming scale so you can use a SyncVar or Commands and RPC's
 	// Check this out on the UNET docs. It's really really weird :)
 

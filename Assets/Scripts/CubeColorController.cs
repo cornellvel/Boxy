@@ -6,8 +6,8 @@ using UnityEngine.Networking;
 [System.Serializable]
 class RChunk {
 	public float R;
-	public int distancePersonA;
-	public int distancePerosnB;
+	public float distancePersonA;
+	public float distancePerosnB;
 	public int chunkNum;
 }
 
@@ -32,7 +32,7 @@ public class CubeColorController : NetworkBehaviour {
 
 		currentFrame++;
 
-		if (!(currentFrame > UpdateThreshold))
+		if (currentFrame < UpdateThreshold)
 			return;
 
 		currentFrame = 0;

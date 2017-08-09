@@ -79,7 +79,7 @@ public class MovementTrackerController : MonoBehaviour {
 		
 		currentFrameCounter++;
 
-		if (!(currentFrameCounter > UpdateThreshold)) return;
+		if (currentFrameCounter < UpdateThreshold) return;
 
 		// Get index of right and left most controllers
 		int rightIndex = SteamVR_Controller.GetDeviceIndex(SteamVR_Controller.DeviceRelation.Rightmost);
