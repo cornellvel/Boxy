@@ -21,11 +21,12 @@ public class VRPawn : NetworkBehaviour {
 
     void Start () {
         if (isLocalPlayer) { 
+			
 			CameraRig = GameObject.Find("[CameraRig]").transform;
 			CameraRig.hasChanged = false;
-            // GetComponentInChildren<SteamVR_ControllerManager>().enabled = true;
-            // GetComponentsInChildren<SteamVR_TrackedObject>(true).ToList().ForEach(x => x.enabled = true);
+
 			Head.GetComponentsInChildren<MeshRenderer>(true).ToList().ForEach(x => x.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On);
+
             gameObject.name = "VRPawn (LocalPlayer)";
 
 			CameraRigHead = CameraRig.transform.GetChild (2);
