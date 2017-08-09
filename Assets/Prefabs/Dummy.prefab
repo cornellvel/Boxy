@@ -2846,12 +2846,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Target: {fileID: 4084227481146544}
   m_ChildIndex: 0
-  m_SendInterval: 0.1
+  m_SendInterval: 0.037037037
   m_SyncRotationAxis: 7
   m_RotationSyncCompression: 0
   m_MovementThreshold: 0.001
-  m_InterpolateRotation: 0.8
-  m_InterpolateMovement: 0.8
+  m_InterpolateRotation: 1
+  m_InterpolateMovement: 0.7
 --- !u!114 &114317914361015022
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2865,12 +2865,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Target: {fileID: 4249078252209348}
   m_ChildIndex: 1
-  m_SendInterval: 0.1
+  m_SendInterval: 0.037037037
   m_SyncRotationAxis: 7
   m_RotationSyncCompression: 0
   m_MovementThreshold: 0.001
-  m_InterpolateRotation: 0.8
-  m_InterpolateMovement: 0.8
+  m_InterpolateRotation: 1
+  m_InterpolateMovement: 0.7
 --- !u!114 &114354638511379100
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2901,12 +2901,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Target: {fileID: 4168682577275138}
   m_ChildIndex: 2
-  m_SendInterval: 0.1
+  m_SendInterval: 0.037037037
   m_SyncRotationAxis: 7
   m_RotationSyncCompression: 0
   m_MovementThreshold: 0.001
-  m_InterpolateRotation: 0.8
-  m_InterpolateMovement: 0.8
+  m_InterpolateRotation: 1
+  m_InterpolateMovement: 0.7
 --- !u!114 &114647916313388728
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3038,7 +3038,7 @@ MonoBehaviour:
       bendGoalWeight: 0
       swivelOffset: 10
     locomotion:
-      weight: 0
+      weight: 0.65
       footDistance: 0.2
       stepThreshold: 0.4
       angleThreshold: 60
@@ -3134,9 +3134,9 @@ MonoBehaviour:
   m_SyncSpin: 0
   m_MovementTheshold: 0.001
   m_VelocityThreshold: 0.0001
-  m_SnapThreshold: 5
+  m_SnapThreshold: 50
   m_InterpolateRotation: 0
-  m_InterpolateMovement: 0
+  m_InterpolateMovement: 1
 --- !u!137 &137000146862357052
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

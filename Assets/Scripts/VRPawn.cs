@@ -2,6 +2,7 @@
 using UnityEngine.Networking;
 using System.Collections;
 using System.Linq;
+using RootMotion.FinalIK;
 
 public class VRPawn : NetworkBehaviour {
 
@@ -36,7 +37,7 @@ public class VRPawn : NetworkBehaviour {
 			CameraRigRight.hasChanged = false;
 
 
-			if (FinalIKHead && FinalIKLeft && FinalIKRight) {
+			if (isRealAvatar()) {
 
 				FinalIKHead.localPosition = new Vector3(0, 0, -.08f);
 				FinalIKLeft.localPosition = new Vector3(0, 0.05f, -.08f);
@@ -45,6 +46,11 @@ public class VRPawn : NetworkBehaviour {
 			}
 
         } else {
+
+			if (isRealAvatar ()) {
+				GetComponent<VRIK> ().solver.locomotion.weight = 0;
+			}
+
             gameObject.name = "VRPawn (RemotePlayer)";
         }
 	}
@@ -55,6 +61,10 @@ public class VRPawn : NetworkBehaviour {
 			follower.position = mover.position;
 			follower.rotation = mover.rotation;
 		} 
+	}
+
+	bool isRealAvatar () {
+		return FinalIKHead && FinalIKLeft && FinalIKRight;
 	}
 
 	void Update () {
@@ -70,8 +80,7 @@ public class VRPawn : NetworkBehaviour {
 			FollowObject (LeftController, CameraRigLeft);
 			FollowObject (RightController, CameraRigRight);
 		}
-
-
+			
 	}
 		
 }
