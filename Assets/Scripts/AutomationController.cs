@@ -6,6 +6,7 @@ using UnityEngine.Networking;
 public class AutomationController : NetworkBehaviour {
 
 	private bool buttonPressed = false;
+	private bool audioStarted = false;
 
 	private SteamVR_TrackedController controller;
 
@@ -22,8 +23,7 @@ public class AutomationController : NetworkBehaviour {
 		Debug.Log("trigger clicked");
 		buttonPressed = true;
 
-		CmdButtonPressed (isServer);
-
+		if (!audioStarted) CmdButtonPressed (isServer);
 		// networking
 	}
 
@@ -35,8 +35,11 @@ public class AutomationController : NetworkBehaviour {
 	[ClientRpc]
 	void RpcButtonPressed(bool sentByServer) {
 
-		if ((sentByServer && !isServer) || (!sentByServer && isServer) && buttonPressed) {
-			print ("start audio");
+		// ooh this is complicated
+		if ((sentByServer && !isServer) || (!sentByServer && isServer) && buttonPressed && !audioStarted) {
+			audioStarted = true;
+			print ("starting audio!");
+			CmdButtonPressed (!sentByServer);
 		}
 
 	}
