@@ -22,21 +22,31 @@ public class AutomationController : NetworkBehaviour {
 		Debug.Log("trigger clicked");
 		buttonPressed = true;
 
-		CmdButtonPressed ();
+		CmdButtonPressed (isServer);
 
 		// networking
 	}
 
 	[Command]
-	public void CmdButtonPressed() {
-		RpcButtonPressed ();
+	public void CmdButtonPressed(bool sentByServer) {
+		RpcButtonPressed (sentByServer);
 	}
 
 	[ClientRpc]
-	void RpcButtonPressed() {
-		if (buttonPressed) {
-			print ("both buttons pressed");
+	void RpcButtonPressed(bool sentByServer) {
+		
+		if (sentByServer && isServer || !(sentByServer || isServer)) {
+			print ("jus me pressing the buhton again");
 		}
+
+		if (sentByServer && !isServer) {
+			print ("the other person pressed the button");
+		}
+
+		if (!sentByServer && isServer) {
+			print ("other person pressed ta buhton");
+		}
+			
 	}
 		
 	// client reception

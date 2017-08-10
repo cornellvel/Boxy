@@ -120,11 +120,13 @@ public class MovementTrackerController : MonoBehaviour {
 
 		yield return request.Send();
 
-		if (request.isNetworkError) {
-			Debug.Log(request.error);
-        } else {
-			Debug.Log(request.responseCode);
-        }
+		if (EnvVariables.debug) { 
+			if (request.isNetworkError) {
+				Debug.Log (request.error);
+			} else {
+				Debug.Log (request.responseCode);
+			}
+		}
     }
 		
 }
