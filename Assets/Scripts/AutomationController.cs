@@ -35,8 +35,7 @@ public class AutomationController : NetworkBehaviour {
 	void PlayersPressedChanged(SyncListString.Operation op, int itemIndex) {
 		print ("clicked by " + playersPressed [itemIndex]);
 		if (playersPressed.Count == 2 /* we're running two people */) {
-			// code for playing audio goes here
-			print ("start audio");
+			GameObject.Find ("InstructAudio").GetComponent<AudioSource> ().Play ();
 		}
 	}
 
