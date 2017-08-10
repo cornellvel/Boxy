@@ -5,8 +5,6 @@ using UnityEngine.Networking;
 
 public class AutomationController : NetworkBehaviour {
 
-	private bool buttonPressed = false;
-
 	private SteamVR_TrackedController controller;
 
 	private SyncListString playersPressed = new SyncListString();
@@ -19,17 +17,22 @@ public class AutomationController : NetworkBehaviour {
 
 	}
 		
+	void addPlayerPressedItem (string displayName) {
+		if (!playersPressed.Contains (displayName)) {
+			playersPressed.Add (displayName);
+		}
+	}
 
 	void HandleTriggerClicked (object sender, ClickedEventArgs e) {
+
+		if (!isLocalPlayer)
+			return;
 		
-		Debug.Log("trigger clicked");
-		buttonPressed = true;
-
-
-		if (!playersPressed.Contains (EnvVariables.DisplayName)) {
-			playersPressed.Add (EnvVariables.DisplayName);
+		if (isServer) {
+			addPlayerPressedItem (EnvVariables.DisplayName);
+		} else {
+			CmdPlayerPressed (EnvVariables.DisplayName);
 		}
-
 	}
 
 	void PlayersPressedChanged(SyncListString.Operation op, int itemIndex) {
@@ -37,6 +40,12 @@ public class AutomationController : NetworkBehaviour {
 		if (playersPressed.Count == 2 /* we're running two people */) {
 			GameObject.Find ("InstructAudio").GetComponent<AudioSource> ().Play ();
 		}
+	}
+
+
+	[Command]
+	void CmdPlayerPressed(string displayName) {
+		addPlayerPressedItem (displayName);
 	}
 
 }
