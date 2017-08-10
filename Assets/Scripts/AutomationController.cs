@@ -6,11 +6,10 @@ using UnityEngine.Networking;
 public class AutomationController : NetworkBehaviour {
 
 	private bool buttonPressed = false;
-	private bool audioStarted = false;
 
 	private SteamVR_TrackedController controller;
 
-	SyncListString playersPressed = new SyncListString();
+	private SyncListString playersPressed = new SyncListString();
 
 	private void Start() {
 		// controller = GetComponent<SteamVR_TrackedController>();
@@ -35,9 +34,10 @@ public class AutomationController : NetworkBehaviour {
 
 	void PlayersPressedChanged(SyncListString.Operation op, int itemIndex) {
 		print ("clicked by " + playersPressed [itemIndex]);
+		if (playersPressed.Count == 2 /* we're running two people */) {
+			// code for playing audio goes here
+			print ("start audio");
+		}
 	}
-
-		
-	// client reception
 
 }
