@@ -34,19 +34,11 @@ public class AutomationController : NetworkBehaviour {
 
 	[ClientRpc]
 	void RpcButtonPressed(bool sentByServer) {
-		
-		if (sentByServer && isServer || !(sentByServer || isServer)) {
-			print ("jus me pressing the buhton again");
+
+		if ((sentByServer && !isServer) || (!sentByServer && isServer) && buttonPressed) {
+			print ("start audio");
 		}
 
-		if (sentByServer && !isServer) {
-			print ("the other person pressed the button");
-		}
-
-		if (!sentByServer && isServer) {
-			print ("other person pressed ta buhton");
-		}
-			
 	}
 		
 	// client reception
