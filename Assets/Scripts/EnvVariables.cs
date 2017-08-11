@@ -9,5 +9,6 @@ public class EnvVariables {
 	public static string DisplayName = "Avatar X";
 	public static string Comparator = "Avatar Y";
 	public static bool debug = false; 
+	public static float duration = 5f * 60f;
 
 }
