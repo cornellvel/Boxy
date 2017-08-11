@@ -7,36 +7,41 @@ public class AutomationClient : NetworkBehaviour {
 
 	private SteamVR_TrackedController controller;
 
-	[SyncVar(hook="ButtonPressChanged")]
-	private bool buttonPressed = false;
-
+	private SyncListString playersPressed = new SyncListString();
 
 	private void Start() {
 		// controller = GetComponent<SteamVR_TrackedController>();
 		controller = GameObject.Find("[CameraRig]").transform.GetChild(0).GetComponent<SteamVR_TrackedController>();
 		controller.TriggerClicked += HandleTriggerClicked;
+		playersPressed.Callback = PlayersPressedChanged;
 
 	}
 
+	void addPlayerPressedItem (string displayName) {
+		if (!playersPressed.Contains (displayName)) {
+			playersPressed.Add (displayName);
+		}
+	}
 
 	void HandleTriggerClicked (object sender, ClickedEventArgs e) {
 
 		if (!isLocalPlayer)
 			return;
-		
-		CmdPlayerPressed ();
+
+
+		CmdPlayerPressed (EnvVariables.DisplayName);
 
 	}
 
-	void ButtonPressChanged(bool newValue) {
-		AutomationController.addPlayersReady (EnvVariables.DisplayName);
-		buttonPressed = newValue;
+	void PlayersPressedChanged(SyncListString.Operation op, int itemIndex) {
+		print ("clicked by " + playersPressed [itemIndex]);
+		AutomationController.addPlayersReady (playersPressed[itemIndex]);
 	}
 
 
 	[Command]
-	void CmdPlayerPressed() {
-		buttonPressed = true;
+	void CmdPlayerPressed(string displayName) {
+		addPlayerPressedItem (displayName);
 	}
 
 }
