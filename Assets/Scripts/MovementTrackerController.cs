@@ -104,29 +104,11 @@ public class MovementTrackerController : MonoBehaviour {
 		// print (startTime - System.DateTime.Now.Millisecond);
 		// startTime = System.DateTime.Now.Millisecond;
 
-		StartCoroutine (SendRequest (BaseURI + "api/action/create", json));
+		StartCoroutine (WebRequests.SendRequest (BaseURI + "api/action/create", json));
 
 		currentFrameCounter = 0;
 
 	}
-
-    IEnumerator SendRequest(string url, string json) {
-
-		UnityWebRequest request = new UnityWebRequest(url, "POST");
-		byte[] bodyRaw = Encoding.UTF8.GetBytes(json);
-		request.uploadHandler = (UploadHandler) new UploadHandlerRaw(bodyRaw);
-		request.downloadHandler = (DownloadHandler) new DownloadHandlerBuffer();
-		request.SetRequestHeader("Content-Type", "application/json");
-
-		yield return request.Send();
-
-		if (EnvVariables.debug) { 
-			if (request.isNetworkError) {
-				Debug.Log (request.error);
-			} else {
-				Debug.Log (request.responseCode);
-			}
-		}
-    }
+		
 		
 }
