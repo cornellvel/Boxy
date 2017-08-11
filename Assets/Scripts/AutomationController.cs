@@ -9,8 +9,7 @@ public static class AutomationController {
 
 	public static bool addPlayersReady (string displayName) {
 
-		if (playersPressed.Contains (displayName))
-			return false;
+		if (playersPressed.Contains (displayName)) return false;
 
 		playersPressed.Add (displayName);
 
@@ -21,7 +20,7 @@ public static class AutomationController {
 	}
 
 	private static void checkAudioStart () {
-		
+		Debug.Log("Player " + playersPressed.Count + " ready!");
 		if (playersPressed.Count == 2) {
 			GameObject.Find ("InstructAudio").GetComponent<AudioSource> ().Play ();
 		}

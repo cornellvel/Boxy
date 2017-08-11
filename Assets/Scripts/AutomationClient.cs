@@ -8,8 +8,8 @@ public class AutomationClient : NetworkBehaviour {
 	private SteamVR_TrackedController rightController;
 	private SteamVR_TrackedController leftController;
 
-
-	private SyncListString playersPressed = new SyncListString();
+	[SyncVar (hook="PlayerPressedChanged")]
+	private string playerPressed = "";
 
 	private void Start() {
 		// controller = GetComponent<SteamVR_TrackedController>();
@@ -19,14 +19,6 @@ public class AutomationClient : NetworkBehaviour {
 		rightController.TriggerClicked += HandleTriggerClicked;
 		leftController.TriggerClicked += HandleTriggerClicked;
 
-		playersPressed.Callback = PlayersPressedChanged;
-
-	}
-
-	void addPlayerPressedItem (string displayName) {
-		if (!playersPressed.Contains (displayName)) {
-			playersPressed.Add (displayName);
-		}
 	}
 
 	void HandleTriggerClicked (object sender, ClickedEventArgs e) {
@@ -38,14 +30,14 @@ public class AutomationClient : NetworkBehaviour {
 
 	}
 
-	void PlayersPressedChanged(SyncListString.Operation op, int itemIndex) {
-		AutomationController.addPlayersReady (playersPressed[itemIndex]);
+	void PlayerPressedChanged(string readyPlayer) {
+		AutomationController.addPlayersReady (readyPlayer);
 	}
 
 
 	[Command]
 	void CmdPlayerPressed(string displayName) {
-		addPlayerPressedItem (displayName);
+		playerPressed = displayName;
 	}
 
 }
