@@ -5,14 +5,20 @@ using UnityEngine.Networking;
 
 public class AutomationClient : NetworkBehaviour {
 
-	private SteamVR_TrackedController controller;
+	private SteamVR_TrackedController rightController;
+	private SteamVR_TrackedController leftController;
+
 
 	private SyncListString playersPressed = new SyncListString();
 
 	private void Start() {
 		// controller = GetComponent<SteamVR_TrackedController>();
-		controller = GameObject.Find("[CameraRig]").transform.GetChild(0).GetComponent<SteamVR_TrackedController>();
-		controller.TriggerClicked += HandleTriggerClicked;
+		rightController = GameObject.Find("[CameraRig]").transform.GetChild(0).GetComponent<SteamVR_TrackedController>();
+		leftController = GameObject.Find("[CameraRig]").transform.GetChild(1).GetComponent<SteamVR_TrackedController>();
+
+		rightController.TriggerClicked += HandleTriggerClicked;
+		leftController.TriggerClicked += HandleTriggerClicked;
+
 		playersPressed.Callback = PlayersPressedChanged;
 
 	}
@@ -27,14 +33,12 @@ public class AutomationClient : NetworkBehaviour {
 
 		if (!isLocalPlayer)
 			return;
-
-
+		
 		CmdPlayerPressed (EnvVariables.DisplayName);
 
 	}
 
 	void PlayersPressedChanged(SyncListString.Operation op, int itemIndex) {
-		print ("clicked by " + playersPressed [itemIndex]);
 		AutomationController.addPlayersReady (playersPressed[itemIndex]);
 	}
 
@@ -45,3 +49,4 @@ public class AutomationClient : NetworkBehaviour {
 	}
 
 }
+
