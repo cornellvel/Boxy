@@ -31,7 +31,7 @@ public class AutomationClient : NetworkBehaviour {
 	}
 
 	void PlayerPressedChanged(string readyPlayer) {
-		AutomationController.addPlayersReady (readyPlayer);
+		GameObject.Find("Automator").gameObject.GetComponent<AutomationController>().addPlayersReady (readyPlayer, isServer);
 	}
 
 

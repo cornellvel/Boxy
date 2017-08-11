@@ -1,30 +1,45 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
 using UnityEngine.Networking;
 
-public static class AutomationController {
+[System.Serializable]
+public class Event {
+	public string eventName;
+	public string displayName;
+}
 
-	public static List<string> playersPressed = new List<string>();
+public class AutomationController : MonoBehaviour {
 
-	public static bool addPlayersReady (string displayName) {
+	public List<string> playersPressed = new List<string>();
+
+	public bool addPlayersReady (string displayName, bool isServer) {
 
 		if (playersPressed.Contains (displayName)) return false;
 
 		playersPressed.Add (displayName);
 
-		checkAudioStart ();
+		checkAudioStart (isServer);
 
 		return true;
 
 	}
 
-	private static void checkAudioStart () {
+	private void checkAudioStart (bool isServer) {
+		
 		Debug.Log("Player " + playersPressed.Count + " ready!");
 		if (playersPressed.Count == 2) {
-			GameObject.Find ("InstructAudio").GetComponent<AudioSource> ().Play ();
+
+			Event e = new Event ();
+			e.eventName = System.DateTime.Now.ToString () + " start";
+			e.displayName = "Unet Server";
+
+			this.GetComponent<AudioSource> ().Play();
+
 		}
 
 	}
 
 }
+

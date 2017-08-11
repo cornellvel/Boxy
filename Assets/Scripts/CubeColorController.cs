@@ -72,7 +72,7 @@ public class CubeColorController : NetworkBehaviour {
 			yield return www.Send();
 
 			if (www.isNetworkError) {
-				Debug.Log(www.error);
+				if (EnvVariables.debug) Debug.Log(www.error);
 			} else {
 				
 				RawRData response = JsonUtility.FromJson<RawRData> (www.downloadHandler.text);
