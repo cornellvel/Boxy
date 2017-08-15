@@ -29,14 +29,13 @@ public class AudioRecorder : MonoBehaviour {
     }
 
     public void startRecording() {
-        workingDirectory = "RECORDING/" + DateTime.Now.ToString("MM.dd_hh:mm");
+        workingDirectory = "RECORDING/"; // + DateTime.Now.ToString("MM.dd_hh:mm");
         Directory.CreateDirectory(workingDirectory);
 
         Debug.Log(workingDirectory);
 
         StartWriting(workingDirectory + "/" + fileName);
         recOutput = true;
-        Time.captureFramerate = 30;
     }
 
     public void stopRecording() {
