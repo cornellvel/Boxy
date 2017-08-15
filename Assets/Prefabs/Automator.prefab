@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4491757542144490}
   - component: {fileID: 82054337259153728}
   - component: {fileID: 114385391343072382}
-  - component: {fileID: 114684027768149844}
   m_Layer: 0
   m_Name: Automator
   m_TagString: Untagged
@@ -134,14 +133,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playersPressed: []
---- !u!114 &114684027768149844
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1003627629576316}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d0318f5ea910354faae690a59824433, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
