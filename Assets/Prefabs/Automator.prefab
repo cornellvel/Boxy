@@ -20,6 +20,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4491757542144490}
   - component: {fileID: 82054337259153728}
+  - component: {fileID: 114385391343072382}
+  - component: {fileID: 114684027768149844}
   m_Layer: 0
   m_Name: Automator
   m_TagString: Untagged
@@ -50,7 +52,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 01d8dfee45af7644b87aeb826758a533, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -120,3 +122,26 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &114385391343072382
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1003627629576316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8664059bc0a33df4d813454fc18a2ac7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playersPressed: []
+--- !u!114 &114684027768149844
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1003627629576316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d0318f5ea910354faae690a59824433, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
