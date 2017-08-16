@@ -8,7 +8,8 @@ public class EnvVariables {
 	public static string BaseURI = "http://localhost:8000/";
 	public static string DisplayName = "Avatar X";
 	public static string Comparator = "Avatar Y";
-	public static bool debug = false; 
+	public static bool debug = false;
+    public static bool timerEnabled = false;
 	public static float duration = 5f * 60f;
 
 }
