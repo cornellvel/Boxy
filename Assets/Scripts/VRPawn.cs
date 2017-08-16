@@ -54,6 +54,15 @@ public class VRPawn : NetworkBehaviour {
 
             gameObject.name = "VRPawn (RemotePlayer)";
         }
+
+        if (isServer && isLocalPlayer) {
+            CameraRig.position = new Vector3(1, 0, 0);
+            CameraRig.rotation = Quaternion.Euler(0, 90, 0);
+        } else if (isLocalPlayer) {
+            CameraRig.position = new Vector3(-1, 0, 0);
+            CameraRig.rotation = Quaternion.Euler(0, -90, 0);
+        }
+
 	}
 
 	void FollowObject (Transform follower, Transform mover) {
