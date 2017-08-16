@@ -25,8 +25,8 @@ public class AutomationClient : NetworkBehaviour {
 
 		if (!isLocalPlayer)
 			return;
-		
-		CmdPlayerPressed (EnvVariables.DisplayName);
+
+        if (GameObject.Find("VRPawn (RemotePlayer)")) CmdPlayerPressed (EnvVariables.DisplayName);
 
 	}
 
