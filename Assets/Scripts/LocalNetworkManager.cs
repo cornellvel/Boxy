@@ -4,29 +4,18 @@ using System.Collections;
 
 public class LocalNetworkManager : NetworkManager {
 
-	public bool runAsServer = true;
-
-	public string serverIP;
+    private string AvatarType = EnvVariables.AvatarType;
+	private string serverIP = EnvVariables.ServerIP;
 
 	void Start () {
 
-		if (runAsServer) {
-			SetupServer();
+        networkAddress = serverIP;
+
+		if (serverIP == "localhost") {
+			StartHost();
 		} else {
-			SetupClient();
+			StartClient();
 		}
-	}
-
-	void SetupServer () {
-        
-        networkAddress = "localhost";
-		StartHost();
-
-	}
-
-	void SetupClient () {
-		networkAddress = serverIP;
-		StartClient();
 	}
 
     override public void OnClientDisconnect(NetworkConnection conn) {
@@ -36,7 +25,14 @@ public class LocalNetworkManager : NetworkManager {
         enabled = false;
         Invoke("ProcessDisconnect", 0.5f);
     }
-    
+
+    public override void OnServerAddPlayer(NetworkConnection conn, short playerControllerId) {
+
+        GameObject player = Instantiate(Resources.Load("PlayerPrefabs/" + AvatarType), transform.position, Quaternion.identity) as GameObject;
+
+        NetworkServer.AddPlayerForConnection(conn, player, playerControllerId);
+    }
+
     void ProcessDisconnect()
     {
 		enabled = true;
