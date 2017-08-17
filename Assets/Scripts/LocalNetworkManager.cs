@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.Networking.NetworkSystem;
 using System.Collections;
 
 public class LocalNetworkManager : NetworkManager {
@@ -26,11 +27,31 @@ public class LocalNetworkManager : NetworkManager {
         Invoke("ProcessDisconnect", 0.5f);
     }
 
-    public override void OnServerAddPlayer(NetworkConnection conn, short playerControllerId) {
+    public override void OnClientConnect(NetworkConnection conn) {
 
-        GameObject player = Instantiate(Resources.Load("PlayerPrefabs/" + AvatarType), transform.position, Quaternion.identity) as GameObject;
+        // Create message to set the player
+        Debug.Log(spawnPrefabs[0].ToString());
+        IntegerMessage msg = new IntegerMessage(spawnPrefabs.FindIndex(item => item.name == EnvVariables.AvatarType));
 
+        // Call Add player and pass the message
+        ClientScene.AddPlayer(conn, 0, msg);
+    }
+
+    public override void OnServerAddPlayer(NetworkConnection conn, short playerControllerId, NetworkReader extraMessageReader) {
+
+
+        var stream = extraMessageReader.ReadMessage<IntegerMessage>();
+        int selectedPlayer = stream.value;
+        
+        //Select the prefab from the spawnable objects list
+        var playerPrefab = spawnPrefabs[selectedPlayer];
+
+        // Create player object with prefab
+        var player = Instantiate(playerPrefab) as GameObject;
+
+        // Add player object for connection
         NetworkServer.AddPlayerForConnection(conn, player, playerControllerId);
+
     }
 
     void ProcessDisconnect()
