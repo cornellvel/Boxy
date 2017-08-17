@@ -9,10 +9,10 @@ public class EnvVariables {
     public static string ServerIP = "localhost";
 
 	public static string BaseURI = "http://" + ServerIP + ":8000/";
-	public static string DisplayName = "Avata1r X";
+	public static string DisplayName = "Avatar X";
 	public static string Comparator = "Avatar Y";
 
-    public static string AvatarType = "Dummy";
+    public static string AvatarType = "VRPawn";
 
 	public static bool debug = false;
     public static bool timerEnabled = false;
