@@ -60,7 +60,7 @@ public class VRPawn : NetworkBehaviour {
             CameraRig.rotation = Quaternion.Euler(0, -90, 0);
         } else if (isLocalPlayer) {
             CameraRig.position = new Vector3(-1, 0, 0);
-            CameraRig.rotation = Quaternion.Euler(0, -90, 0);
+            CameraRig.rotation = Quaternion.Euler(0, 90, 0);
         }
 
 	}
