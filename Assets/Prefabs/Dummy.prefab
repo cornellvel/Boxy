@@ -2136,7 +2136,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1963531395735528}
   m_LocalRotation: {x: -0.4999999, y: 0.49999976, z: 0.49999946, w: -0.5000009}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.08}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4168682577275138}
@@ -2443,7 +2443,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1280883218773058}
   m_LocalRotation: {x: 0.33834028, y: 0.16449945, z: -0.7288645, w: -0.5720336}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.05, z: -0.08}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4070617390532086}
@@ -2707,7 +2707,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1703377064364014}
   m_LocalRotation: {x: 0.72886497, y: 0.5720349, z: -0.3383384, w: -0.16449678}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.05, z: -0.08}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4173919709065764}
@@ -3039,7 +3039,7 @@ MonoBehaviour:
       bendGoalWeight: 0
       swivelOffset: 10
     locomotion:
-      weight: 0.65
+      weight: 1
       footDistance: 0.2
       stepThreshold: 0.4
       angleThreshold: 60
@@ -3140,7 +3140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TransformSyncMode: 1
-  m_SendInterval: 0.033333335
+  m_SendInterval: 0.11111111
   m_SyncRotationAxis: 7
   m_RotationSyncCompression: 0
   m_SyncSpin: 0
