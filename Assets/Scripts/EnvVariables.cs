@@ -12,7 +12,7 @@ public class EnvVariables {
 	public static string DisplayName = "Avatar X";
 	public static string Comparator = "Avatar Y";
 
-    public static string AvatarType = "0818avatar1";
+    public static string AvatarType = "0818avatar2";
 
 	public static bool debug = false;
     public static bool timerEnabled = false;
