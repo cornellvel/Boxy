@@ -37,15 +37,6 @@ public class VRPawn : NetworkBehaviour {
 			CameraRigLeft.hasChanged = false;
 			CameraRigRight.hasChanged = false;
 
-
-			if (isRealAvatar()) {
-
-				FinalIKHead.localPosition = new Vector3(0, 0, -.08f);
-				FinalIKLeft.localPosition = new Vector3(0, 0.05f, -.08f);
-				FinalIKRight.localPosition = new Vector3(0, 0.05f, -.08f);
-
-			}
-
         } else {
 
 			if (isRealAvatar ()) {

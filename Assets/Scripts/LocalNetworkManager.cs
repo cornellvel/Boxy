@@ -30,8 +30,8 @@ public class LocalNetworkManager : NetworkManager {
     public override void OnClientConnect(NetworkConnection conn) {
 
         // Create message to set the player
-        Debug.Log(spawnPrefabs[0].ToString());
         IntegerMessage msg = new IntegerMessage(spawnPrefabs.FindIndex(item => item.name == EnvVariables.AvatarType));
+
 
         // Call Add player and pass the message
         ClientScene.AddPlayer(conn, 0, msg);
