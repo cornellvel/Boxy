@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace Dissonance.Audio.Capture
 {
-    internal class MicrophoneCapture
+    public class MicrophoneCapture
         : IDisposable, IMicrophoneCapture
     {
         #region fields and properties

@@ -51,7 +51,7 @@ namespace Dissonance
         private int _decoderSampleRate;
         private string _localPlayerName;
 
-        internal MicrophoneCapture MicCapture { get; private set; }
+        public MicrophoneCapture MicCapture { get; private set; }
 
         [SerializeField]private bool _isMuted;
         /// <summary>
