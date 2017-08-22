@@ -12,16 +12,18 @@ public class AutomationClient : NetworkBehaviour {
 	private string playerPressed = "";
 
 	private void Start() {
-		// controller = GetComponent<SteamVR_TrackedController>();
+        
+        // controller = GetComponent<SteamVR_TrackedController>();
 		rightController = GameObject.Find("[CameraRig]").transform.GetChild(0).GetComponent<SteamVR_TrackedController>();
 		leftController = GameObject.Find("[CameraRig]").transform.GetChild(1).GetComponent<SteamVR_TrackedController>();
 
-		rightController.TriggerClicked += HandleTriggerClicked;
-		leftController.TriggerClicked += HandleTriggerClicked;
+        rightController.MenuButtonClicked += HandleButtonClicked;
+        leftController.MenuButtonClicked += HandleButtonClicked;
+
 
 	}
 
-	void HandleTriggerClicked (object sender, ClickedEventArgs e) {
+	void HandleButtonClicked (object sender, ClickedEventArgs e) {
 
 		if (!isLocalPlayer)
 			return;
