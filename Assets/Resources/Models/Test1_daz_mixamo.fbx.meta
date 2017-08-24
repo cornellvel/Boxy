@@ -1,0 +1,235 @@
+fileFormatVersion: 2
+guid: 58ed958245d7cbc48bef1ece53685e09
+timeCreated: 1503509274
+licenseType: Free
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: abdomen
+    100002: abdomen2
+    100004: chest
+    100006: Genesis
+    100008: Genesis.Shape
+    100010: head
+    100012: hip
+    100014: lBigToe
+    100016: lCarpal1
+    100018: lCarpal2
+    100020: lCollar
+    100022: lEye
+    100024: lFoot
+    100026: lForeArm
+    100028: lHand
+    100030: lIndex1
+    100032: lIndex2
+    100034: lIndex3
+    100036: lMid1
+    100038: lMid2
+    100040: lMid3
+    100042: lowerJaw
+    100044: lPectoral
+    100046: lPinky1
+    100048: lPinky2
+    100050: lPinky3
+    100052: lRing1
+    100054: lRing2
+    100056: lRing3
+    100058: lShin
+    100060: lShldr
+    100062: lThigh
+    100064: lThumb1
+    100066: lThumb2
+    100068: lThumb3
+    100070: lToe
+    100072: neck
+    100074: pelvis
+    100076: rBigToe
+    100078: rCarpal1
+    100080: rCarpal2
+    100082: rCollar
+    100084: rEye
+    100086: rFoot
+    100088: rForeArm
+    100090: rHand
+    100092: rIndex1
+    100094: rIndex2
+    100096: rIndex3
+    100098: rMid1
+    100100: rMid2
+    100102: rMid3
+    100104: rPectoral
+    100106: rPinky1
+    100108: rPinky2
+    100110: rPinky3
+    100112: rRing1
+    100114: rRing2
+    100116: rRing3
+    100118: rShin
+    100120: rShldr
+    100122: rThigh
+    100124: rThumb1
+    100126: rThumb2
+    100128: rThumb3
+    100130: rToe
+    100132: //RootNode
+    100134: tongue01
+    100136: tongue02
+    100138: tongue03
+    100140: tongue04
+    100142: tongue05
+    100144: tongueBase
+    100146: tongueTip
+    100148: upperJaw
+    400000: abdomen
+    400002: abdomen2
+    400004: chest
+    400006: Genesis
+    400008: Genesis.Shape
+    400010: head
+    400012: hip
+    400014: lBigToe
+    400016: lCarpal1
+    400018: lCarpal2
+    400020: lCollar
+    400022: lEye
+    400024: lFoot
+    400026: lForeArm
+    400028: lHand
+    400030: lIndex1
+    400032: lIndex2
+    400034: lIndex3
+    400036: lMid1
+    400038: lMid2
+    400040: lMid3
+    400042: lowerJaw
+    400044: lPectoral
+    400046: lPinky1
+    400048: lPinky2
+    400050: lPinky3
+    400052: lRing1
+    400054: lRing2
+    400056: lRing3
+    400058: lShin
+    400060: lShldr
+    400062: lThigh
+    400064: lThumb1
+    400066: lThumb2
+    400068: lThumb3
+    400070: lToe
+    400072: neck
+    400074: pelvis
+    400076: rBigToe
+    400078: rCarpal1
+    400080: rCarpal2
+    400082: rCollar
+    400084: rEye
+    400086: rFoot
+    400088: rForeArm
+    400090: rHand
+    400092: rIndex1
+    400094: rIndex2
+    400096: rIndex3
+    400098: rMid1
+    400100: rMid2
+    400102: rMid3
+    400104: rPectoral
+    400106: rPinky1
+    400108: rPinky2
+    400110: rPinky3
+    400112: rRing1
+    400114: rRing2
+    400116: rRing3
+    400118: rShin
+    400120: rShldr
+    400122: rThigh
+    400124: rThumb1
+    400126: rThumb2
+    400128: rThumb3
+    400130: rToe
+    400132: //RootNode
+    400134: tongue01
+    400136: tongue02
+    400138: tongue03
+    400140: tongue04
+    400142: tongue05
+    400144: tongueBase
+    400146: tongueTip
+    400148: upperJaw
+    4300000: Genesis.Shape
+    9500000: //RootNode
+    13700000: Genesis.Shape
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
