@@ -16,15 +16,14 @@ public class VRPawn : NetworkBehaviour {
     public Transform DazHead;
     public Transform DazHips;
 
-    public Vector3 adjustmentHead = new Vector3(0, 0, 0);
-    public Vector3 adjustmentHips = new Vector3(0, 0, 0);
+    public float adjustment = .1f;
+    public float dazAvatarHeight = 1.78f;
 
 	private Transform CameraRig;
 	private Transform CameraRigHead;
 	private Transform CameraRigLeft;
 	private Transform CameraRigRight;
 
-    private float dazHeightDiff;
 
     void Start () {
         if (isLocalPlayer) { 
@@ -43,6 +42,9 @@ public class VRPawn : NetworkBehaviour {
 			CameraRigHead.hasChanged = false;
 			CameraRigLeft.hasChanged = false;
 			CameraRigRight.hasChanged = false;
+
+            GameObject.Find("[CameraRig]").transform.GetChild(1).GetComponent<SteamVR_TrackedController>().TriggerClicked += ResetHeight;
+
 
         } else {
 
@@ -81,15 +83,27 @@ public class VRPawn : NetworkBehaviour {
 		} 
 	}
 
-    void FollowDazObjects (Transform dazHips, Transform dazHead) {
-        
-        // dazHead.position = new Vector3(Head.position.x, Head.position.y, Head.position.z - .3f);
-        FollowRotation(dazHead, CameraRigHead);
-        dazHead.position = new Vector3(Head.position.x + adjustmentHead.x, dazHead.position.y + adjustmentHead.y, Head.position.z + adjustmentHead.z);
-        dazHips.position = new Vector3(Head.position.x + adjustmentHips.x, dazHips.position.y + adjustmentHips.y, Head.position.z + adjustmentHips.z);
+    void ResetHeight(object sender, ClickedEventArgs e) {
+        float theHeight = CameraRigHead.position.y;
+        float percentage = (theHeight / dazAvatarHeight);
+        Vector3 _tmp = new Vector3(percentage, percentage, percentage);
+        this.transform.localScale = _tmp;
+    }
 
-        
-        // dazHips.rotation = Quaternion.Euler(0, dazHead.rotation.eulerAngles.y, 0);
+    void FollowDazObjects (Transform dazHips, Transform dazHead) {
+
+        // We need to offset the hips in the X or Z direction depending on the direction the avatar is facing
+        // otherwise the head goes --into-- the camerarig. Depending on the direction we face, we need to offset in
+        // either x or z. This is just a sinusoidal regression that fixes how much x we should offset or how much y we should offset
+
+        // graph these in desmos or email me if this doesn't make sense (me at oshaikh dot com)
+        float x = -adjustment * Mathf.Sin((Mathf.PI / 180) * (CameraRigHead.rotation.eulerAngles.y));
+        float z = -adjustment * Mathf.Sin((Mathf.PI / 180) * (CameraRigHead.rotation.eulerAngles.y + 90));
+
+        FollowRotation(dazHead, CameraRigHead);
+        dazHips.position = new Vector3(Head.position.x + x, dazHips.position.y, Head.position.z + z);
+        dazHips.rotation = Quaternion.Euler(0, CameraRigHead.rotation.eulerAngles.y, 0);
+
     }
 
 
@@ -103,6 +117,7 @@ public class VRPawn : NetworkBehaviour {
 		}
 
 		if (isLocalPlayer) {
+            // FollowObject (this.transform, CameraRig);
 			FollowObject (Head, CameraRigHead);
 			FollowObject (LeftController, CameraRigLeft);
 			FollowObject (RightController, CameraRigRight);

@@ -45,11 +45,6 @@ public class ControlBody_fp : NetworkBehaviour {
 		new_pos.y -= 0.3f;
 		Vector3 change = new_pos - old_pos;
 
-		Vector3 _tmp = holdHeight.transform.position;
-		_tmp.x = (holdHeight.transform.position.x);
-		_tmp.y = (holdHeight.transform.position.y) - .3f;
-		_tmp.z = (holdHeight.transform.position.z);
-
 		hips.position = hips.position + change; 
 	}
 
