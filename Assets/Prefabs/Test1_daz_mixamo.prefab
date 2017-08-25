@@ -339,6 +339,11 @@ GameObject:
   - component: {fileID: 95549416689993158}
   - component: {fileID: 114053654494143612}
   - component: {fileID: 114950409604796796}
+  - component: {fileID: 114991643478720624}
+  - component: {fileID: 114474486543843714}
+  - component: {fileID: 114151148162129740}
+  - component: {fileID: 114130577034639146}
+  - component: {fileID: 114680433465130048}
   m_Layer: 0
   m_Name: Test1_daz_mixamo
   m_TagString: Untagged
@@ -2414,6 +2419,44 @@ MonoBehaviour:
     i15: 22
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 1
+--- !u!114 &114130577034639146
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1271180881924976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1267208747, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Target: {fileID: 4160102491797638}
+  m_ChildIndex: 2
+  m_SendInterval: 0.037037037
+  m_SyncRotationAxis: 7
+  m_RotationSyncCompression: 0
+  m_MovementThreshold: 0
+  m_InterpolateRotation: 0.7
+  m_InterpolateMovement: 0.7
+--- !u!114 &114151148162129740
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1271180881924976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1267208747, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Target: {fileID: 4353811769980692}
+  m_ChildIndex: 1
+  m_SendInterval: 0.037037037
+  m_SyncRotationAxis: 7
+  m_RotationSyncCompression: 0
+  m_MovementThreshold: 0
+  m_InterpolateRotation: 0.7
+  m_InterpolateMovement: 0.7
 --- !u!114 &114272474607651792
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2433,6 +2476,44 @@ MonoBehaviour:
   IsEnabled: 1
   debug: 1
   transition: 1
+--- !u!114 &114474486543843714
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1271180881924976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1267208747, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Target: {fileID: 4044515947542172}
+  m_ChildIndex: 0
+  m_SendInterval: 0.037037037
+  m_SyncRotationAxis: 7
+  m_RotationSyncCompression: 0
+  m_MovementThreshold: 0
+  m_InterpolateRotation: 0.7
+  m_InterpolateMovement: 0.7
+--- !u!114 &114680433465130048
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1271180881924976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1267208747, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Target: {fileID: 4011328558284712}
+  m_ChildIndex: 3
+  m_SendInterval: 0.037037037
+  m_SyncRotationAxis: 7
+  m_RotationSyncCompression: 0
+  m_MovementThreshold: 0
+  m_InterpolateRotation: 0.7
+  m_InterpolateMovement: 0.7
 --- !u!114 &114783140800444892
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2470,8 +2551,29 @@ MonoBehaviour:
   isMixamoAvatar: 0
   DazHead: {fileID: 4507655074966412}
   DazHips: {fileID: 4044515947542172}
-  adjustment: 0.1
+  hipAdjustment: 0.1
   dazAvatarHeight: 1.68
+--- !u!114 &114991643478720624
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1271180881924976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TransformSyncMode: 1
+  m_SendInterval: 0.05
+  m_SyncRotationAxis: 7
+  m_RotationSyncCompression: 0
+  m_SyncSpin: 0
+  m_MovementTheshold: 0
+  m_VelocityThreshold: 0.0001
+  m_SnapThreshold: 5
+  m_InterpolateRotation: 1
+  m_InterpolateMovement: 1
 --- !u!137 &137399497231209596
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
