@@ -2470,7 +2470,7 @@ MonoBehaviour:
   isMixamoAvatar: 0
   DazHead: {fileID: 4507655074966412}
   DazHips: {fileID: 4044515947542172}
-  adjustment: 0.08
+  adjustment: 0.1
   dazAvatarHeight: 1.68
 --- !u!137 &137399497231209596
 SkinnedMeshRenderer:

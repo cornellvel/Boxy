@@ -16,7 +16,7 @@ public class VRPawn : NetworkBehaviour {
     public Transform DazHead;
     public Transform DazHips;
 
-    public float adjustment = .1f;
+    public float hipAdjustment = .1f;
     public float dazAvatarHeight = 1.78f;
 
 	private Transform CameraRig;
@@ -86,19 +86,34 @@ public class VRPawn : NetworkBehaviour {
     void ResetHeight(object sender, ClickedEventArgs e) {
         float theHeight = CameraRigHead.position.y;
         float percentage = (theHeight / dazAvatarHeight);
-        Vector3 _tmp = new Vector3(percentage, percentage, percentage);
-        this.transform.localScale = _tmp;
+        this.transform.localScale = new Vector3(percentage, percentage, percentage);
+
+        CmdAvatarScaleChange(this.transform.localScale);
+    }
+
+    [Command]
+    public void CmdAvatarScaleChange(Vector3 newAvatarScale)
+    {
+        RpcAvatarScaleChange(newAvatarScale);
+    }
+
+    [ClientRpc]
+    void RpcAvatarScaleChange(Vector3 newAvatarScale)
+    {
+        this.transform.localScale = newAvatarScale;
     }
 
     void FollowDazObjects (Transform dazHips, Transform dazHead) {
-
-        // We need to offset the hips in the X or Z direction depending on the direction the avatar is facing
-        // otherwise the head goes --into-- the camerarig. Depending on the direction we face, we need to offset in
-        // either x or z. This is just a sinusoidal regression that fixes how much x we should offset or how much y we should offset
+    
+        /* 
+            We need to offset the hips in the X or Z direction depending on the direction the avatar is facing
+            otherwise the head goes --into-- the camerarig. Depending on the direction we face, we need to offset in
+            either x or z. This is just a sinusoidal regression that fixes how much x we should offset or how much y we should offset
+        */
 
         // graph these in desmos or email me if this doesn't make sense (me at oshaikh dot com)
-        float x = -adjustment * Mathf.Sin((Mathf.PI / 180) * (CameraRigHead.rotation.eulerAngles.y));
-        float z = -adjustment * Mathf.Sin((Mathf.PI / 180) * (CameraRigHead.rotation.eulerAngles.y + 90));
+        float x = -hipAdjustment * Mathf.Sin((Mathf.PI / 180) * (CameraRigHead.rotation.eulerAngles.y));
+        float z = -hipAdjustment * Mathf.Sin((Mathf.PI / 180) * (CameraRigHead.rotation.eulerAngles.y + 90));
 
         FollowRotation(dazHead, CameraRigHead);
         dazHips.position = new Vector3(Head.position.x + x, dazHips.position.y, Head.position.z + z);
@@ -117,13 +132,11 @@ public class VRPawn : NetworkBehaviour {
 		}
 
 		if (isLocalPlayer) {
-            // FollowObject (this.transform, CameraRig);
 			FollowObject (Head, CameraRigHead);
 			FollowObject (LeftController, CameraRigLeft);
 			FollowObject (RightController, CameraRigRight);
+            if (isDazAvatar) FollowDazObjects(DazHips, DazHead);
 		}
-
-        if (isDazAvatar) FollowDazObjects(DazHips, DazHead);
 			
 	}
 		
