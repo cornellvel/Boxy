@@ -3882,9 +3882,8 @@ MonoBehaviour:
   Head: {fileID: 4649035338095772}
   LeftController: {fileID: 4016924467217428}
   RightController: {fileID: 4814448785209148}
-  FinalIKHead: {fileID: 4680472657729894}
-  FinalIKLeft: {fileID: 4592476382086184}
-  FinalIKRight: {fileID: 4878142117401000}
+  isDazAvatar: 0
+  isMixamoAvatar: 1
 --- !u!114 &114636635225657996
 MonoBehaviour:
   m_ObjectHideFlags: 1
